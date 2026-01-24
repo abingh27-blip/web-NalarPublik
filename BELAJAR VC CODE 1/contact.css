@@ -1,0 +1,144 @@
+/* ===== FIX FULL BACKGROUND ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAKSA HTML & BODY FULL */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a1f44, #102f6b);
+}
+
+/* CONTAINER UTAMA */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== NAVBAR ===== */
+.container-navbar {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 0;
+}
+
+.ul-navbar {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.a-navbar {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.a-navbar:hover {
+  color: #6ea8ff;
+  border-bottom: 2px solid #6ea8ff;
+}
+
+.a-navbar.active{
+  color: #6ea8ff;
+  border-bottom: 2px solid #6ea8ff;
+}
+
+.a-navbar:not(.active):hover{
+  color: #6ea8ff;
+  border-bottom: 2px solid #6ea8ff;
+}
+
+/* ===== CONTENT ===== */
+.container-content {
+  flex: 1; /* INI KUNCI */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== GRID NOMOR DARURAT ===== */
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 30px;
+}
+
+/* CARD TELPON */
+.card {
+  background: white;
+  border-radius: 30px;
+  padding: 30px 10px;
+  display: block;
+  width: 200px;
+  height: 120px;
+  text-align: center;
+  text-decoration: none;
+  color: #0a1f44;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+/* HOVER */
+.card:hover {
+  transform: scale(1.05);
+  background: #f2f2f2;
+}
+
+/* NOMOR */
+.card h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* NAMA LAYANAN */
+.card p {
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .emergency-grid {
+    grid-template-columns: repeat(3, 200px);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.a-content p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a1f44;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* ===== FOOTER ===== */
+.container-footer {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 20px;
+  text-align: center;
+}
+
+.h1-footer {
+  color: white;
+  font-size: 20px;
+}
