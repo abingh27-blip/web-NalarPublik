@@ -15,6 +15,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #0a1f44, #102f6b);
+  font-family:Arial, sans-serif ;
 }
 
 /* CONTAINER UTAMA */
@@ -120,7 +121,7 @@ body {
 
 @media (max-width: 480px) {
   .emergency-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2,1fr);
   }
 }
 .a-content p {
@@ -141,4 +142,38 @@ body {
 .h1-footer {
   color: white;
   font-size: 20px;
+}
+
+/* ===== RESPONSIVE: Untuk HP (layar kecil) ===== */
+@media (max-width: 768px) {
+  .container-content {
+    flex-direction: column; /* Ubah ke vertikal */
+    gap: 20px; /* Kurangi gap */
+    padding: 10px; /* Kurangi padding */
+  }
+
+  .img-content {
+    width: 150px; /* Perkecil gambar */
+  }
+
+  .a-content, .b-content {
+    padding: 20px; /* Kurangi padding card */
+  }
+
+  .a-content p, .b-content p {
+    font-size: 16px; /* Perkecil teks */
+  }
+
+  .ul-navbar {
+    gap: 20px; /* Kurangi gap navbar */
+  }
+
+  .a-navbar {
+    font-size: 16px; /* Perkecil font navbar */
+    padding: 8px 15px; /* Kurangi padding */
+  }
+
+  .h1-footer {
+    font-size: 16px; /* Perkecil font footer */
+  }
 }

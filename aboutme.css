@@ -1,27 +1,28 @@
-/* ===== FIX FULL BACKGROUND ===== */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* PAKSA HTML & BODY FULL */
-html {
+/* ===== HTML & BODY ===== */
+html, body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
-  width: 100%;
-  min-height: 100vh;
   background: linear-gradient(135deg, #0a1f44, #102f6b);
+  font-family: Arial, sans-serif;
 }
 
-/* CONTAINER UTAMA */
+/* ===== CONTAINER ===== */
 .container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 /* ===== NAVBAR ===== */
@@ -45,98 +46,66 @@ body {
   font-weight: 600;
   transition: 0.3s;
 }
-.a-navbar:hover{
-  color: #6ea8ff;
-  border-bottom: 2px solid #6ea8ff;
-}
 
+.a-navbar:hover,
 .a-navbar.active {
   color: #6ea8ff;
   border-bottom: 2px solid #6ea8ff;
 }
 
-.a-navbar:not(.active):hover{
-  color: #6ea8ff;
-  border-bottom: 2px solid #6ea8ff;
-}
 /* ===== CONTENT ===== */
 .container-content {
-  flex: 1; /* INI KUNCI */
-  display: flex;
- padding: 50px 20px;
-  align-items: center;
+  flex: 1;
+  padding: 50px 20px;
 }
 
-/* ===== ABOUT ME GRID ===== */
+/* ===== TITLE ===== */
 .about-title {
   color: white;
   font-size: 32px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
-/* GRID */
+/* ===== GRID (DESKTOP) ===== */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
+  gap: 20px;
+  width: 70vw;              /* TETEP SEPERTI ASLI */
+  max-width: 900px;         /* TAMBAHAN BIAR AMAN */
+  padding: 20px;
+  margin: 0 auto;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 .about-card {
-  position: relative;
   background: white;
   padding: 25px;
-  display: flex ;
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 30px;
   text-decoration: none;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  gap: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
 }
+
 .about-card:hover {
   transform: scale(1.05);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
 }
-
-.about-card:hover img {
-  transform: scale(1.05);
-}
-
 
 .about-card img {
-  width: 125Px;
+  width: 125px;
   height: 125px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 .about-card p {
   font-size: 16px;
-  font-weight: bold;
-  color: #0a1f44;
-}
-
-/* CARD */
-.a-content {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-.img-content {
-  width: 220px;
-  margin-bottom: 15px;
-}
-
-.a-content p {
-  font-size: 18px;
   font-weight: bold;
   color: #0a1f44;
 }
@@ -146,17 +115,66 @@ body {
   background: rgba(0, 0, 0, 0.35);
   padding: 20px;
   text-align: center;
+  margin-top: auto;
 }
 
 .h1-footer {
   color: white;
   font-size: 20px;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
+/* ================================================= */
+/* ================== RESPONSIVE =================== */
+/* ================================================= */
+
+/* ===== HP & TABLET (2 KOTAK, RAPI) ===== */
 @media (max-width: 768px) {
   .about-grid {
-    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr); /* TETEP 2 */
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .about-card {
+    flex-direction: column;
+    padding: 12px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+
+  .about-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* INI KUNCI ANTI PENYOK */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .about-card p {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .a-navbar {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .ul-navbar {
+    gap: 20px;
+  }
+
+  .h1-footer {
+    font-size: 16px;
+  }
+}
+
+/* ===== MATIIN HOVER SCALE DI HP ===== */
+@media (hover: none) {
+  .about-card:hover {
+    transform: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   }
 }
